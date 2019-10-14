@@ -1,0 +1,45 @@
+<h1 style="text-align: center">Burger-Mania</h1>
+
+
+{{!-- where the user inputs a new burger --}}
+<h2 style="text-align: center;">Add Burger of your choice to the list below</h2>
+<form class="create-form" style="text-align: center;">
+
+
+    <div class="form-group">
+        <label for="bu">Burger Name:</label>
+        <input type="text" id="bu" name="name">
+    </div>
+
+
+    <div class="form-group">
+        <input type="radio" name="devoured" value="0" checked> Devoured Burgers!<br>
+        <input type="radio" name="devoured" value="1">Un-devoured Burgers!
+    </div>
+    {{!-- Button to add a new burger to the 'burgers' table --}}
+    <button class="button" type="submit">Add Burger</button>
+</form>
+
+<h2 style="text-align:center;">Devoured Burgers:</h2>
+
+
+<!-- Pass in data from server.js -->
+<ul>
+    {{#each burgers}}
+    {{#unless devoured}}
+    {{!-- a 'true' boolean value would mean it would have been eaten for each burgers --}}
+    {{> burgers/burger-block devoured=true}}
+    {{/unless}}
+    {{/each}}
+</ul>
+
+<h2 style="text-align: center;">Un-Devoured Burgers:</h2>
+<ul>
+    {{#each burgers}}
+    {{#if devoured}}
+
+    {{!-- a 'false' boolean value would mean it would have been eaten for each burger --}}
+    {{> burgers/burger-block devoured=false}}
+    {{/if}}
+    {{/each}}
+</ul>

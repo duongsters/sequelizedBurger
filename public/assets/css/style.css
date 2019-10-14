@@ -1,0 +1,395 @@
+/* ---Handlebar files styling--- */
+button {
+    font-size: 14px;
+    color: #5af0da;
+    background-color: grey;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+h1 {
+    font-size: 45px;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+ul {
+    text-align: center;
+    font-size: 25px;
+}
+li {    
+    list-style-type: none;
+    padding: 5px;
+    margin: 5px;
+    font-family: cursive;
+    background-color:rgba(255,255,0,0.3); 
+  }
+  
+  .label {
+    font-weight: bold;
+  }
+  
+  .create-form {
+    padding: 5px;
+    margin: 5px;
+    background-color:rgba(255,0,0,0.3);
+  }
+  
+  .form-group {
+    margin-bottom: 5px;
+    font-size: 25px;
+
+  }
+
+
+  /* ---Burger Background--- */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ff6d32;
+    height: calc(100vh - 40px);
+    margin: 20px;
+  }
+  
+  .canvas {
+    width: 200vh;
+    height: 500vh;
+    max-width: 80%;
+    max-height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: -1;
+  }
+  
+  .burger {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .shadow {
+    position: absolute;
+    bottom: 8%;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    background: #a23f18;
+    border-radius: 50%;
+  }
+  
+  .bun.top {
+    position: absolute;
+    top: 10%;
+    left: 0;
+    width: 100%;
+    height: 82%;
+    background: linear-gradient(#f7bc50 50%, transparent 50%);
+    border-radius: 50% 50% 0 0;
+    overflow: hidden;
+  }
+  
+  .bun.top:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 43%;
+    height: 50%;
+    background-color: #e3ac4b;
+  }
+  
+  .bun.top span {
+    display: block;
+    position: absolute;
+    width: 2%;
+    height: 7%;
+    background: #fbd695;
+    border-radius: 40%;
+  }
+  
+  .top span:nth-child(1) {
+    top: 23%;
+    left: 15%;
+    transform: rotate(30deg);
+  }
+  
+  .top span:nth-child(2) {
+    top: 30%;
+    left: 42%;
+    transform: rotate(20deg);
+  }
+  
+  .top span:nth-child(3) {
+    top: 30%;
+    right: 10%;
+    transform: rotate(-20deg);
+  }
+  
+  .top span:nth-child(4) {
+    top: 10%;
+    left: 35%;
+    transform: rotate(-20deg);
+  }
+  
+  .top span:nth-child(5) {
+    top: 8%;
+    right: 30%;
+    transform: rotate(50deg);
+  }
+  
+  .top span:nth-child(6) {
+    top: 30%;
+    right: 35%;
+    transform: rotate(-80deg);
+  }
+  
+  .top span:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fbd695;
+    border-radius: 40%;
+  }
+  
+  .top span:nth-child(1):before {
+    top: 50%;
+    left: 500%;
+    transform: rotate(-45deg);
+  }
+  
+  .top span:nth-child(2):before {
+    top: -200%;
+    left: 300%;
+    transform: rotate(-45deg);
+  }
+  
+  .top span:nth-child(3):before {
+    top: 0;
+    left: -500%;
+    width: 80%;
+    height: 80%;
+    transform: rotate(90deg);
+  }
+  
+  .top span:nth-child(4):before {
+    top: 150%;
+    left: -350%;
+    transform: rotate(90deg);
+  }
+  
+  .top span:nth-child(5):before {
+      top: 190%;
+      left: -700%;
+      transform: rotate(40deg);
+  }
+  
+  .top span:nth-child(6):before {
+      top: 180%;
+      left: 500%;
+      transform: rotate(40deg);
+  }
+  
+  .tomatoes {
+    position: absolute;
+    top: 51%;
+    left: 2%;
+    width: 96%;
+    height: 3%;
+    background: linear-gradient(to right, #bd131d 58%, #970b19 58%);
+    border-radius: 10%;
+  }
+  
+  .patty {
+    position: absolute;
+    top: 59%;
+    left: 10%;
+    width: 80%;
+    height: 13%;
+    background: linear-gradient(to right, #8c582b 62%, #7e4e29 62%);
+  }
+  
+  .patty:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -12%;
+    width: 15%;
+    height: 100%;
+    background: #8c582b;
+    border-radius: 50% 0 0 50%;
+  }
+  
+  .patty:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -12%;
+    width: 15%;
+    height: 100%;
+    background: #7e4e29;
+    border-radius: 0 50% 50% 0;
+  }
+  
+  .lettuce {
+    position: absolute;
+    top: 72%;
+    left: 2%;
+    width: 96%;
+    height: 2%;
+    background: linear-gradient(to right, #9fb331 59%, #8fa22f 59%);
+    border-radius: 10%;
+  }
+  
+  .lettuce:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    width: 7%;
+    height: 220%;
+    background: #9fb331;
+    border-radius: 0 50%;
+  }
+  
+  .lettuce:after {
+    content: '';
+    position: absolute;
+    bottom: -150%;
+    right: 23%;
+    width: 6%;
+    height: 250%;
+    background: #8fa22f;
+    border-radius: 50% 0;
+  }
+  
+  .bun.bottom {
+    position: absolute;
+    top: 74%;
+    left: 10%;
+    width: 80%;
+    height: 13%;
+    background: linear-gradient(to right, #f7bc50 60%, #e3ac4b 60%);
+  }
+  
+  .bun.bottom:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -12%;
+    width: 15%;
+    height: 100%;
+    background: #f7bc50;
+    border-radius: 30% 0 0 50%;
+  }
+  
+  .bun.bottom:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -12%;
+    width: 15%;
+    height: 100%;
+    background: #e3ac4b;
+    border-radius: 0 30% 50% 0;
+  }
+  
+  .cheese {
+    position: absolute;
+    top: 54%;
+    left: 2%;
+    width: 96%;
+    height: 5%;
+    background: linear-gradient(to right, #fdde03 59%, #fbc000 59%);
+    border-radius: 15%;
+  }
+  
+  .cheese:before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    right: 20%;
+    width: 9%;
+    height: 200%;
+    background: #fbc000;
+    border-radius: 0 0 50% 50%;
+    animation: drip 5s ease-in-out infinite;
+  }
+  
+  .cheese:after {
+    content: '';
+    position: absolute;
+    bottom: -80%;
+    right: 23%;
+    width: 20%;
+    height: 180%;
+    background: linear-gradient(to right, #fdde03 10%, #fbc000 10%);
+    border-radius: 0 0 50% 50%;
+  }
+  
+  .cheese_drip {
+    position: absolute;
+    bottom: 11%;
+    right: 17%;
+    width: 14%;
+    height: 3%;
+    background: #fbc000;
+    border-radius: 50%;
+  }
+  
+  .cheese_drip:before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: 15%;
+    width: 60%;
+    height: 130%;
+    background: #fbc000;
+    border-radius: 50%;
+  }
+  
+  .cheese_drip:after {
+    content: '';
+    position: absolute;
+    top: -800%;
+    left: 30%;
+    width: 25%;
+    height: 150%;
+    background: #fbc000;
+    border-radius: 50% 50% 20% 20%;
+    animation: drop 5s ease-out infinite;
+  }
+  
+  @keyframes drip {
+    0%,
+    19%,
+    100% {
+      height: 170%;
+    }
+    60%,
+    75% {
+      width: 4%;
+      height: 550%;
+      right: 22%;
+      border-radius: 0 0 10% 10%;
+    }
+  }
+  
+  @keyframes drop {
+    0%,
+    85% {
+      top: -800%;
+    }
+    100% {
+      top: -50%;
+    }
+  }
