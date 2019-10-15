@@ -29,7 +29,7 @@ app.set("view engine", "handlebars");
 require("./routes/apiRoutes")(app);
 
 
-//--------------Listenng PORT---------------------------------//
+//--------------Listening PORT---------------------------------//
 // Start our server so that it can begin listening to client requests.
 db.sequelize.sync({ force: false }).then(function() {
     app.listen(PORT, function() {
