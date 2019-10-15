@@ -1,26 +1,29 @@
 {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "database_development",
-    "host": "127.0.0.1",
+    "username": "wzxxyyi8agzfbkqb",
+    "password": "rx9kved2chskkles",
+    "port": 3306,
+    "database": "w75dah8xntqguwee",
+    "host": "hngomrlb3vfq3jcr.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql",
-    "operatorsAliases": false
+    "operatorAliases": false
   },
   "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
+    "username": "wzxxyyi8agzfbkqb",
+    "password": "rx9kved2chskkles",
+    "port": 3306,
+    "database": "w75dah8xntqguwee",
+    "host": "hngomrlb3vfq3jcr.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql",
-    "operatorsAliases": false
+    "operatorAliases": false
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
+    "username": "wzxxyyi8agzfbkqb",
+    "password": "rx9kved2chskkles",
+    "port": 3306,
+    "database": "w75dah8xntqguwee",
+    "host": "hngomrlb3vfq3jcr.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql",
-    "operatorsAliases": false
+    "operatorAliases": false
   }
 }
