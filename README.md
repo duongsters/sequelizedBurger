@@ -1,4 +1,4 @@
-# Assignment: Burger-Mania Part 2: Sequelized Version
+# Assignment: Burger-Mania Part 2: The SEQUELized Version
 
 
 ![Screenshot1](./public/assets/img/Screenshot.gif)
