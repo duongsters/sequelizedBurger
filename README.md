@@ -73,12 +73,13 @@ db.sequelize.sync({ force: false }).then(function () {
 ```
 
 via burger.js:
-* 
+* I removed everything from my model burger.js file as it was previously ran entirely on ORM callbacks. This new revised sequalized version of my model burger.js file has much less coding that goes straight to the point in having the function run to change the burger name and the devoured status from being eaten or not
 
 ```javascript
 module.exports = function (sequelize, DataTypes) {
     var Burger = sequelize.define("burgers", {
         burger_name: {
+            // Giving the burger_name model to a name with a type STRING
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
@@ -86,12 +87,15 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
         devoured: {
+            // Giving the devoured model to value of a type BOOLEAN then setting that to false
             type: DataTypes.BOOLEAN,
             defaultValue: false
         },
-    }, {
+    }, 
+        {
         timestamps: false
-    });
+    }
+);
     return Burger;
 };
 ```
