@@ -28,6 +28,7 @@ To connect locally...
 
 ## Technologies Used:
 - NPM: I used specifically the Express-Handlebars, mySQL, Express throughout the entire assigment.
+- Sequelize JS: Used within this application when interacting with burgers_db, and similar to ORM.js,  provides easy access to MySQL, MariaDB, SQLite or PostgreSQL databases by mapping database entries to objects and vice versa
 - Node.JS: Basically the engine that runs the NPM packages used as stated above.
 - Javascript: Basically used within the main files to render the entire application
 
