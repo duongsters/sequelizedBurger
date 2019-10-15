@@ -1,4 +1,4 @@
-// Grabbing our models
+// Grabbing our models folder
 var db = require("../models");
 
 // Routes
@@ -19,7 +19,7 @@ module.exports = function (app) {
         // res.render("index", "burgerObject");
     });
 
-    // POST route for saving a new todo. You can create a todo using the data on req.body
+    // POST route for saving a new burger. You can create a burger using the data on req.body
     app.post("/", function (req, res) {
         db.burgers.create({
             burger_name: req.body.name
@@ -28,7 +28,7 @@ module.exports = function (app) {
         });
     });
 
-    // PUT route for updating burgers. The updated todo will be available in req.body
+    // PUT route for updating burgers. The updated burgers table will be available in req.body
     app.put("/:id", function (req, res) {
         db.burgers.update({
             devoured: true

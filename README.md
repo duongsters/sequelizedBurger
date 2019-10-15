@@ -20,7 +20,7 @@ Simply put, Burger-Mania will allow users to (in no specific order):
 The simpliest way in seeing a demo of Burger Mania is to click on the Heroku link (https://hidden-mountain-42182.herokuapp.com/) that leads it directly to the project without any installations required. This link can be found within this readme file or at the description area within http://github.com/duongsters/burger
 
 To connect locally...
-1) Clone burger repository via https://github.com/duongsters/burger
+1) Clone burger repository via https://github.com/duongsters/sequelizedBurger
 2) Run command line Terminal (or via Gitbash) 'npm install' for required NPMS used within the application
 3) Run command line 'node server.js' to start up the application
 4) Once connected to http://localhost:8080/ from CLI, copy that exact link to URL
@@ -33,113 +33,67 @@ To connect locally...
 
 
 ## Code Snippet(s)
-via burgers_controller.js:
-* This specific of code within my burgers_controller.js file shows 2 functions ...the top functions runs to add a burger to the list and the router.delete function below routes the function in deleting a burger from the burgers table
+via apiRoutes.js:
+* This specific of code within my apiRoutes.js file shows 2 functions ...the top functions runs to POST a burger to the list from the root route and the app.delete function deletes a burger from the burgers table via the user ID route
 ```javascript
-router.put("/api/burgers/:id", function (req, res) {
-    var condition = "id = " + req.params.id;
-    console.log("condition", condition);
-console.log(condition);
-    burger.updateOne({
-        devoured: req.body.devoured
-    },
-        condition, function (result) {
-            if (result.changedRows == 0) {
-                return res.status(404).end();
-            }
-            else {
-                res.status(200).end();
-            }
+    app.post("/", function (req, res) {
+        db.burgers.create({
+            burger_name: req.body.name
+        }).then(function () {
+            res.redirect("/");
         });
-});
+    });
 
-//.delete express call method in deleting a burger from the db
-router.delete("/api/burgers/:id", function (req, res) {
-    var condition = "id = " + req.params.id;
+    app.delete("/:id", function (req, res) {
+        db.burgers.destroy({
+            where: {
+                id: req.params.id
+            }
+        }).then(function (data) {
+            res.redirect("/");
+        });
+    });
 
-    burger.delete(condition, function (result) {
-        if (result.affectedRows == 0) {
-            return res.status(404).end();
-        }
-        else {
-            res.status(200).end();
-        }
+```
+
+
+via server.js :
+* This specific portion within my server.js file will be showing the changes I needed to make with the use of sequelize within this file...first by assigning the 'db' variable be set to location of models folder, then requiring the use of the apiRoutes.js folder, and finally changing the listening PORT function
+```javascript
+var db = require("./models");
+
+require("./routes/apiRoutes")(app);
+
+db.sequelize.sync({ force: false }).then(function () {
+    app.listen(PORT, function () {
+        console.log("App listening on PORT " + PORT);
     });
 });
 
 ```
 
+via burger.js:
+* 
 
-via orm.js :
-* This specific portion within my orm.js file will be running as the CRUD (Creating, Reading, Updating and Deleteing a burger) for the application
 ```javascript
-var orm = {
-
-    selectAll: function (tableInput, cb) {
-        var queryString = "SELECT * FROM " + tableInput + ";";
-        connection.query(queryString, function (err, result) {
-            if (err) {
-                throw err;
+module.exports = function (sequelize, DataTypes) {
+    var Burger = sequelize.define("burgers", {
+        burger_name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [1]
             }
-            cb(result);
-        });
-    },
-
-    insertOne: function (table, cols, vals, cb) {
-        var queryString = "INSERT INTO " + table;
-
-        queryString += " (";
-        queryString += cols.toString();
-        queryString += ") ";
-        queryString += "VALUES (";
-        queryString += printQuestionMarks(vals.length);
-        queryString += ") ";
-
-        console.log(queryString);
-
-        connection.query(queryString, vals, function (err, result) {
-            if (err) {
-                throw err;
-            }
-            cb(result);
-        });
-
-    },
-
-
-    updateOne: function(table, objColVals, condition, cb) {
-        var queryString = "UPDATE " + table;
-
-        queryString += " SET ";
-        queryString += objToSql(objColVals);
-        queryString += " WHERE ";
-        queryString += condition;
-
-        console.log(queryString);
-        connection.query(queryString, function(err, result){
-            if (err) {
-                throw err;
-            }
-            cb(result);
-        });
-
-    },
-
-
-    delete: function (table, condition, cb) {
-        var queryString = "DELETE FROM " + table;
-        queryString += " WHERE ";
-        queryString += condition;
-
-        connection.query(queryString, function (err, result) {
-            if (err) {
-                throw err;
-            }
-            cb(result);
-        });
-    }
+        },
+        devoured: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
+        },
+    }, {
+        timestamps: false
+    });
+    return Burger;
 };
-
 ```
 
 

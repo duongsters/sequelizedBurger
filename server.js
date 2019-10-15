@@ -25,11 +25,11 @@ var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-// Import routes and give the server access to them
+// Import apiRroutes.js file and give the server access to it
 require("./routes/apiRoutes")(app);
 
 
-//--------------Listening PORT---------------------------------//
+//--------------SEQUELIZED Listening PORT---------------------------------//
 // Start our server so that it can begin listening to client requests.
 db.sequelize.sync({ force: false }).then(function () {
     app.listen(PORT, function () {
